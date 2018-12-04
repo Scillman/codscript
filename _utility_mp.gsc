@@ -1,7 +1,7 @@
 /**
  * Removes the color (^0 ^1 ^2 ^3 ^4 ^5 ^6 ^7 ^8 ^9) from a string.
  * 
- * @param string The string from wich we want the colors removed.
+ * @param string The string from which we want the colors removed.
  *
  * @return An identical string without the color coding in it.
  */
