@@ -30,7 +30,6 @@ convertToRange(value, min_src_value, max_src_value, min_dest_value, max_dest_val
     }
     else
     {
-        assert(value < min_src_value);
         return min_dest_value;
     }
 }
