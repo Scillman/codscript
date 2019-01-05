@@ -33,3 +33,42 @@ convertToRange(value, min_src_value, max_src_value, min_dest_value, max_dest_val
         return min_dest_value;
     }
 }
+
+/**
+ * Generates an array with the specified number of integers in a random order.
+ * @param start The starting number.
+ * @param count The number of integers to generate.
+ * @return The array with random integers.
+ */
+generateRandomOrder(start, count)
+{
+    ordered = []; // 1,2,3,etc.
+    unordered = []; // 3,6,1,etc.
+
+    // Fills the ordered array with the desired integral values
+    for (i = 0; i < count; i++)
+    {
+        ordered[ordered.size] = (start + i);
+    }
+
+    // Randomizes the order of the ordered into the unordered array
+    for (i = 0; i < count; i++)
+    {
+        // Take a random position
+        index = randomIntRange(0, ordered.size);
+
+        // Copy to the new position
+        unordered[i] = ordered[index];
+
+        // Shift
+        for (j = index + 1; j < ordered.size; j++)
+        {
+            ordered[j - 1] = ordered[j];
+        }
+
+        // Remove
+        ordered[ordered.size - 1] = undefined;
+    }
+
+    return unordered;
+}
