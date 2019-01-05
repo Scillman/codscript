@@ -28,11 +28,11 @@ startTimer(duration)
 
     level.timer_start_time = getTime();
 
-    level.timer = maps\_hud_util::get_countdown_hud();	
-	level.timer SetPulseFX( 30, 900000, 700 );
-  		
-	level.timer.label = level.timer_prefix;
-	level.timer settenthstimer( duration );
+    level.timer = maps\_hud_util::get_countdown_hud();
+    level.timer SetPulseFX( 30, 900000, 700 );
+
+    level.timer.label = level.timer_prefix;
+    level.timer settenthstimer( duration );
 
     wait ( duration * 60 );
     level.timer destroy();

@@ -5,25 +5,25 @@
  */
 removeColorFromString( string )
 {
-	output = "";
+    output = "";
 
-	for ( i = 0; i < string.size; i++ )
-	{
-		if ( string[i] == "^" )
-		{
-			if ( i < string.size - 1 )
-			{
-				if ( string[i + 1] == "0" || string[i + 1] == "1" || string[i + 1] == "2" || string[i + 1] == "3" || string[i + 1] == "4" ||
-					 string[i + 1] == "5" || string[i + 1] == "6" || string[i + 1] == "7" || string[i + 1] == "8" || string[i + 1] == "9" )
-				{
-					i++;
-					continue;
-				}
-			}
-		}
+    for ( i = 0; i < string.size; i++ )
+    {
+        if ( string[i] == "^" )
+        {
+            if ( i < string.size - 1 )
+            {
+                if ( string[i + 1] == "0" || string[i + 1] == "1" || string[i + 1] == "2" || string[i + 1] == "3" || string[i + 1] == "4" ||
+                     string[i + 1] == "5" || string[i + 1] == "6" || string[i + 1] == "7" || string[i + 1] == "8" || string[i + 1] == "9" )
+                {
+                    i++;
+                    continue;
+                }
+            }
+        }
 
-		output += string[i];
-	}
+        output += string[i];
+    }
 
-	return output;
+    return output;
 }
