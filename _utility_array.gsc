@@ -1,4 +1,3 @@
-
 /**
  * Adds the element to the end of the array.
  * @param arr The array to add the element to.
@@ -168,4 +167,21 @@ array_insert_array(arrA, arrB, pos)
     }
 
     return output;
+}
+
+/**
+ * Get the index of the specified element within the array.
+ * @param arr The array that holds the element.
+ * @param element The element to look for in the array.
+ * @return -1 if not found; otherwise, the index of the element within the array.
+ */
+array_index_of(arr, element)
+{
+    for (i = 0; i < arr.size; i++)
+    {
+        if (arr[i] == element)
+            return i;
+    }
+
+    return -1;
 }
