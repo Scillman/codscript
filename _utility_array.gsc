@@ -45,7 +45,7 @@ array_push_front(arr, element)
  * @param arr The array to remove the element from.
  * @return The array with the element removed from it.
  */
-array_pop_back(arr)
+array_pop_front(arr)
 {
     for (i = 1; i < arr.size; i++)
     {
@@ -147,7 +147,7 @@ array_remove_at(arr, index)
  */
 array_insert_array(arrA, arrB, pos)
 {
-    assert(!isDefined(pos) || (pos >= 0 && pos < arrA.length));
+    assert(isDefined(pos) && pos >= 0 && pos < arrA.length);
 
     output = [];
 
@@ -185,3 +185,44 @@ array_index_of(arr, element)
 
     return -1;
 }
+
+
+
+//==============================================================================
+// SORTING - SPECIAL CASES
+//==============================================================================
+/#
+array_sort(arr)
+{
+    assert(arr.size > 0);
+
+    output = [];
+    output[0] = arr[0];
+
+    for (i = 1; i < arr.size; i++)
+    {
+        inserted = false;
+
+        for (j = 0; j < output.size && !inserted; j++)
+        {
+            if (output[j] > arr[i])
+            {
+                for (k = output.size; k > j; k--)
+                {
+                    output[k] = output[k - 1];
+                }
+
+                output[j] = arr[i];
+                inserted = true;
+            }
+        }
+
+        if (!inserted)
+        {
+            output[output.size] = arr[i];
+        }
+    }
+
+    return output;
+}
+#/
